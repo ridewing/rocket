@@ -3,7 +3,7 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Spaceship.png"
+      "filename" : "rocket-fire.png"
     },
     {
       "idiom" : "universal",
@@ -11,7 +11,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "rocket-fire@2x.png"
     }
   ],
   "info" : {
