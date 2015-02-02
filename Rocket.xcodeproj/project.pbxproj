@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C15A1BA19FF8F7F0078D01E /* RocketScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15A1B919FF8F7E0078D01E /* RocketScene.swift */; };
+		1C15A1BC19FF90D00078D01E /* RocketScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C15A1BB19FF90D00078D01E /* RocketScene.sks */; };
+		1C2E9AD019F944BF00B101E9 /* FuelLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E9ACF19F944BF00B101E9 /* FuelLevel.swift */; };
+		1C2E9AD319F94E1C00B101E9 /* FuelLevelParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C2E9AD119F94E1C00B101E9 /* FuelLevelParticles.sks */; };
+		1C2E9AD419F94E1C00B101E9 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2E9AD219F94E1C00B101E9 /* spark.png */; };
+		1C2E9ADB19FA32DA00B101E9 /* MetoriteParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C2E9ADA19FA32DA00B101E9 /* MetoriteParticle.sks */; };
+		1C2E9ADD19FA38BB00B101E9 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C2E9ADC19FA38BB00B101E9 /* Explosion.sks */; };
 		1C3CCE7419F1CB9F00DA1070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CCE7319F1CB9F00DA1070 /* AppDelegate.swift */; };
 		1C3CCE7619F1CB9F00DA1070 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CCE7519F1CB9F00DA1070 /* GameScene.sks */; };
 		1C3CCE7819F1CB9F00DA1070 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CCE7719F1CB9F00DA1070 /* GameScene.swift */; };
@@ -15,6 +22,41 @@
 		1C3CCE7F19F1CB9F00DA1070 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CCE7E19F1CB9F00DA1070 /* Images.xcassets */; };
 		1C3CCE8219F1CB9F00DA1070 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3CCE8019F1CB9F00DA1070 /* LaunchScreen.xib */; };
 		1C3CCE8E19F1CB9F00DA1070 /* RocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CCE8D19F1CB9F00DA1070 /* RocketTests.swift */; };
+		1C3D756C19FA4C1C00E8EC83 /* FuelLevel.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D756B19FA4C1C00E8EC83 /* FuelLevel.xcassets */; };
+		1C3D757019FA4D5400E8EC83 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D756F19FA4D5400E8EC83 /* UI.swift */; };
+		1C3D757219FA4F3600E8EC83 /* UI.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3D757119FA4F3600E8EC83 /* UI.xcassets */; };
+		1C46FA1B19F4F01900EEF8DE /* LevelSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C46FA1A19F4F01900EEF8DE /* LevelSection.swift */; };
+		1C48ACAB1A07783A003C72B9 /* Level01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48ACAA1A07783A003C72B9 /* Level01.swift */; };
+		1C48ACAD1A07FF84003C72B9 /* LevelSelect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C48ACAC1A07FF84003C72B9 /* LevelSelect.sks */; };
+		1C48ACAF1A07FF93003C72B9 /* LevelSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48ACAE1A07FF93003C72B9 /* LevelSelect.swift */; };
+		1C4CC84C1A024903000B8838 /* LevelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CC84B1A024903000B8838 /* LevelItem.swift */; };
+		1C4CC84E1A02E75B000B8838 /* Ufo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CC84D1A02E75B000B8838 /* Ufo.swift */; };
+		1C4CC8501A03925B000B8838 /* SawHorizontalSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CC84F1A03925B000B8838 /* SawHorizontalSides.swift */; };
+		1C4CC8521A03BA63000B8838 /* SawHorizontalCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4CC8511A03BA63000B8838 /* SawHorizontalCenter.swift */; };
+		1C5D94C119FE9886000188A1 /* RocketBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D94C019FE9886000188A1 /* RocketBasic.swift */; };
+		1C5D94C319FE9910000188A1 /* Rocket2000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D94C219FE9910000188A1 /* Rocket2000.swift */; };
+		1C5D94C619FEC87E000188A1 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C5D94C519FEC87E000188A1 /* MenuScene.sks */; };
+		1C5D94C819FEC8D9000188A1 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D94C719FEC8D9000188A1 /* MenuScene.swift */; };
+		1C5D94CA19FECCEE000188A1 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D94C919FECCEE000188A1 /* BaseScene.swift */; };
+		1C5F5F2C19F7D09300271E6B /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C5F5F2A19F7D09300271E6B /* Fire.sks */; };
+		1C5F5F2D19F7D09300271E6B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5F5F2B19F7D09300271E6B /* spark.png */; };
+		1C5F5F3119F7DB1C00271E6B /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C5F5F3019F7DB1C00271E6B /* Smoke.sks */; };
+		1C5F5F3319F7E46A00271E6B /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1C5F5F3219F7E46A00271E6B /* Stars.sks */; };
+		1C5F5F3519F7E73600271E6B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5F5F3419F7E73600271E6B /* star.png */; };
+		1C5F5F3819F7EE0600271E6B /* LevelMoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F5F3719F7EE0600271E6B /* LevelMoon.swift */; };
+		1C6984431A0036940087D895 /* Saw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6984421A0036940087D895 /* Saw.swift */; };
+		1C6984451A00F3C30087D895 /* Crane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6984441A00F3C30087D895 /* Crane.swift */; };
+		1C6984481A010A4E0087D895 /* IndustryLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6984471A010A4E0087D895 /* IndustryLevel.swift */; };
+		1C69844A1A01103B0087D895 /* LevelIndustryMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6984491A01103B0087D895 /* LevelIndustryMedia.xcassets */; };
+		1C85F44B19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C85F44A19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf */; };
+		1C85F44D19FA71B800B597E2 /* Objects.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C85F44C19FA71B800B597E2 /* Objects.xcassets */; };
+		1C85F45019FA73C500B597E2 /* BubbleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85F44F19FA73C500B597E2 /* BubbleItem.swift */; };
+		1C85F45219FA76F700B597E2 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85F45119FA76F700B597E2 /* Objects.swift */; };
+		1C9930E419FE723200B928F5 /* RocketExplorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9930E319FE723200B928F5 /* RocketExplorer.swift */; };
+		1CA7B10A19FE8F4500009E4E /* Rockets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA7B10919FE8F4500009E4E /* Rockets.xcassets */; };
+		1CBB47AE1A076D3F00BD16E0 /* IndustryLevelSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBB47AD1A076D3F00BD16E0 /* IndustryLevelSection.swift */; };
+		1CE9116319F2BAA6005FB913 /* BaseRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9116219F2BAA6005FB913 /* BaseRocket.swift */; };
+		1CE9116619F3C6DD005FB913 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9116519F3C6DD005FB913 /* Level.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +70,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C15A1B919FF8F7E0078D01E /* RocketScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RocketScene.swift; path = Scenes/RocketScene.swift; sourceTree = "<group>"; };
+		1C15A1BB19FF90D00078D01E /* RocketScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = RocketScene.sks; path = Scenes/RocketScene.sks; sourceTree = "<group>"; };
+		1C2E9ACF19F944BF00B101E9 /* FuelLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuelLevel.swift; path = Objects/FuelLevel.swift; sourceTree = "<group>"; };
+		1C2E9AD119F94E1C00B101E9 /* FuelLevelParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = FuelLevelParticles.sks; path = Objects/FuelLevelParticles.sks; sourceTree = "<group>"; };
+		1C2E9AD219F94E1C00B101E9 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Objects/spark.png; sourceTree = "<group>"; };
+		1C2E9ADA19FA32DA00B101E9 /* MetoriteParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MetoriteParticle.sks; path = Objects/MetoriteParticle.sks; sourceTree = "<group>"; };
+		1C2E9ADC19FA38BB00B101E9 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Explosion.sks; path = Objects/Player/Explosion.sks; sourceTree = "<group>"; };
 		1C3CCE6E19F1CB9F00DA1070 /* Rocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3CCE7219F1CB9F00DA1070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C3CCE7319F1CB9F00DA1070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +89,41 @@
 		1C3CCE8719F1CB9F00DA1070 /* RocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3CCE8C19F1CB9F00DA1070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C3CCE8D19F1CB9F00DA1070 /* RocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTests.swift; sourceTree = "<group>"; };
+		1C3D756B19FA4C1C00E8EC83 /* FuelLevel.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = FuelLevel.xcassets; path = Objects/FuelLevel/FuelLevel.xcassets; sourceTree = "<group>"; };
+		1C3D756F19FA4D5400E8EC83 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UI.swift; path = Objects/UI/UI.swift; sourceTree = "<group>"; };
+		1C3D757119FA4F3600E8EC83 /* UI.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = UI.xcassets; path = Objects/UI/UI.xcassets; sourceTree = "<group>"; };
+		1C46FA1A19F4F01900EEF8DE /* LevelSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSection.swift; path = Objects/Level/LevelSection.swift; sourceTree = "<group>"; };
+		1C48ACAA1A07783A003C72B9 /* Level01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level01.swift; path = "Objects/Level/Level industry/Levels/Level01.swift"; sourceTree = "<group>"; };
+		1C48ACAC1A07FF84003C72B9 /* LevelSelect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = LevelSelect.sks; path = Scenes/LevelSelect.sks; sourceTree = "<group>"; };
+		1C48ACAE1A07FF93003C72B9 /* LevelSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelSelect.swift; path = Scenes/LevelSelect.swift; sourceTree = "<group>"; };
+		1C4CC84B1A024903000B8838 /* LevelItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelItem.swift; path = Objects/Level/LevelItem.swift; sourceTree = "<group>"; };
+		1C4CC84D1A02E75B000B8838 /* Ufo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ufo.swift; path = Objects/Level/Ufo.swift; sourceTree = "<group>"; };
+		1C4CC84F1A03925B000B8838 /* SawHorizontalSides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SawHorizontalSides.swift; path = Objects/Level/SawHorizontalSides.swift; sourceTree = "<group>"; };
+		1C4CC8511A03BA63000B8838 /* SawHorizontalCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SawHorizontalCenter.swift; path = Objects/Level/SawHorizontalCenter.swift; sourceTree = "<group>"; };
+		1C5D94C019FE9886000188A1 /* RocketBasic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RocketBasic.swift; path = Objects/Player/RocketBasic.swift; sourceTree = "<group>"; };
+		1C5D94C219FE9910000188A1 /* Rocket2000.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rocket2000.swift; path = Objects/Player/Rocket2000.swift; sourceTree = "<group>"; };
+		1C5D94C519FEC87E000188A1 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MenuScene.sks; path = Scenes/MenuScene.sks; sourceTree = "<group>"; };
+		1C5D94C719FEC8D9000188A1 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuScene.swift; path = Scenes/MenuScene.swift; sourceTree = "<group>"; };
+		1C5D94C919FECCEE000188A1 /* BaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseScene.swift; path = Scenes/BaseScene.swift; sourceTree = "<group>"; };
+		1C5F5F2A19F7D09300271E6B /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Fire.sks; path = Objects/Player/Fire.sks; sourceTree = "<group>"; };
+		1C5F5F2B19F7D09300271E6B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Objects/Player/spark.png; sourceTree = "<group>"; };
+		1C5F5F3019F7DB1C00271E6B /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Smoke.sks; path = Objects/Player/Smoke.sks; sourceTree = "<group>"; };
+		1C5F5F3219F7E46A00271E6B /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Stars.sks; path = Objects/Player/Stars.sks; sourceTree = "<group>"; };
+		1C5F5F3419F7E73600271E6B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Assets/star.png; sourceTree = SOURCE_ROOT; };
+		1C5F5F3719F7EE0600271E6B /* LevelMoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelMoon.swift; path = "Objects/Level/Level moon/LevelMoon.swift"; sourceTree = "<group>"; };
+		1C6984421A0036940087D895 /* Saw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Saw.swift; path = Objects/Level/Saw.swift; sourceTree = "<group>"; };
+		1C6984441A00F3C30087D895 /* Crane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Crane.swift; path = Objects/Level/Crane.swift; sourceTree = "<group>"; };
+		1C6984471A010A4E0087D895 /* IndustryLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndustryLevel.swift; path = "Objects/Level/Level industry/IndustryLevel.swift"; sourceTree = "<group>"; };
+		1C6984491A01103B0087D895 /* LevelIndustryMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = LevelIndustryMedia.xcassets; path = "Objects/Level/Level industry/LevelIndustryMedia.xcassets"; sourceTree = "<group>"; };
+		1C85F44A19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ComicNeue-Angular-Bold.ttf"; path = "Assets/material/comic-neue-1.1/ComicNeue-Angular-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		1C85F44C19FA71B800B597E2 /* Objects.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Objects.xcassets; path = Objects/Objects.xcassets; sourceTree = "<group>"; };
+		1C85F44F19FA73C500B597E2 /* BubbleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleItem.swift; path = Objects/BubbleItem/BubbleItem.swift; sourceTree = "<group>"; };
+		1C85F45119FA76F700B597E2 /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Objects.swift; path = Objects/Objects.swift; sourceTree = "<group>"; };
+		1C9930E319FE723200B928F5 /* RocketExplorer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RocketExplorer.swift; path = Objects/Player/RocketExplorer.swift; sourceTree = "<group>"; };
+		1CA7B10919FE8F4500009E4E /* Rockets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Rockets.xcassets; path = Objects/Player/Rockets.xcassets; sourceTree = "<group>"; };
+		1CBB47AD1A076D3F00BD16E0 /* IndustryLevelSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndustryLevelSection.swift; path = "Objects/Level/Level industry/IndustryLevelSection.swift"; sourceTree = "<group>"; };
+		1CE9116219F2BAA6005FB913 /* BaseRocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseRocket.swift; path = Objects/Player/BaseRocket.swift; sourceTree = "<group>"; };
+		1CE9116519F3C6DD005FB913 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = Objects/Level/Level.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +165,9 @@
 		1C3CCE7019F1CB9F00DA1070 /* Rocket */ = {
 			isa = PBXGroup;
 			children = (
+				1C5D94C419FEC81D000188A1 /* Scenes */,
+				1C85F44A19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf */,
+				1CE9115A19F29A48005FB913 /* Objects */,
 				1C3CCE7319F1CB9F00DA1070 /* AppDelegate.swift */,
 				1C3CCE7519F1CB9F00DA1070 /* GameScene.sks */,
 				1C3CCE7719F1CB9F00DA1070 /* GameScene.swift */,
@@ -116,6 +203,133 @@
 				1C3CCE8C19F1CB9F00DA1070 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C3D756919FA4B7300E8EC83 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D756A19FA4B7B00E8EC83 /* FuelLevel */,
+				1C3D756F19FA4D5400E8EC83 /* UI.swift */,
+				1C3D757119FA4F3600E8EC83 /* UI.xcassets */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		1C3D756A19FA4B7B00E8EC83 /* FuelLevel */ = {
+			isa = PBXGroup;
+			children = (
+				1C2E9ACF19F944BF00B101E9 /* FuelLevel.swift */,
+				1C2E9AD119F94E1C00B101E9 /* FuelLevelParticles.sks */,
+				1C3D756B19FA4C1C00E8EC83 /* FuelLevel.xcassets */,
+			);
+			name = FuelLevel;
+			sourceTree = "<group>";
+		};
+		1C3D756E19FA4D0500E8EC83 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				1C5F5F2B19F7D09300271E6B /* spark.png */,
+				1C5F5F3419F7E73600271E6B /* star.png */,
+				1C5F5F2A19F7D09300271E6B /* Fire.sks */,
+				1C5F5F3019F7DB1C00271E6B /* Smoke.sks */,
+				1C5F5F3219F7E46A00271E6B /* Stars.sks */,
+				1C2E9ADC19FA38BB00B101E9 /* Explosion.sks */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
+		1C48ACA91A0777B3003C72B9 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				1C48ACAA1A07783A003C72B9 /* Level01.swift */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		1C5D94C419FEC81D000188A1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1C5D94C519FEC87E000188A1 /* MenuScene.sks */,
+				1C5D94C719FEC8D9000188A1 /* MenuScene.swift */,
+				1C5D94C919FECCEE000188A1 /* BaseScene.swift */,
+				1C15A1B919FF8F7E0078D01E /* RocketScene.swift */,
+				1C15A1BB19FF90D00078D01E /* RocketScene.sks */,
+				1C48ACAC1A07FF84003C72B9 /* LevelSelect.sks */,
+				1C48ACAE1A07FF93003C72B9 /* LevelSelect.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		1C5F5F3619F7EDE900271E6B /* Level moon */ = {
+			isa = PBXGroup;
+			children = (
+				1C5F5F3719F7EE0600271E6B /* LevelMoon.swift */,
+			);
+			name = "Level moon";
+			sourceTree = "<group>";
+		};
+		1C6984461A010A1B0087D895 /* Level industry */ = {
+			isa = PBXGroup;
+			children = (
+				1C48ACA91A0777B3003C72B9 /* Levels */,
+				1C6984421A0036940087D895 /* Saw.swift */,
+				1C6984441A00F3C30087D895 /* Crane.swift */,
+				1C6984471A010A4E0087D895 /* IndustryLevel.swift */,
+				1C6984491A01103B0087D895 /* LevelIndustryMedia.xcassets */,
+				1C4CC84D1A02E75B000B8838 /* Ufo.swift */,
+				1C4CC84F1A03925B000B8838 /* SawHorizontalSides.swift */,
+				1C4CC8511A03BA63000B8838 /* SawHorizontalCenter.swift */,
+				1CBB47AD1A076D3F00BD16E0 /* IndustryLevelSection.swift */,
+			);
+			name = "Level industry";
+			sourceTree = "<group>";
+		};
+		1C85F44E19FA739F00B597E2 /* BubbleItem */ = {
+			isa = PBXGroup;
+			children = (
+				1C85F44F19FA73C500B597E2 /* BubbleItem.swift */,
+			);
+			name = BubbleItem;
+			sourceTree = "<group>";
+		};
+		1CE9115A19F29A48005FB913 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1C85F44E19FA739F00B597E2 /* BubbleItem */,
+				1C3D756919FA4B7300E8EC83 /* UI */,
+				1CE9116419F3C6C4005FB913 /* Level */,
+				1CE9116119F2BA18005FB913 /* Player */,
+				1C2E9AD219F94E1C00B101E9 /* spark.png */,
+				1C2E9ADA19FA32DA00B101E9 /* MetoriteParticle.sks */,
+				1C85F44C19FA71B800B597E2 /* Objects.xcassets */,
+				1C85F45119FA76F700B597E2 /* Objects.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		1CE9116119F2BA18005FB913 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				1C3D756E19FA4D0500E8EC83 /* Particles */,
+				1CE9116219F2BAA6005FB913 /* BaseRocket.swift */,
+				1C9930E319FE723200B928F5 /* RocketExplorer.swift */,
+				1CA7B10919FE8F4500009E4E /* Rockets.xcassets */,
+				1C5D94C019FE9886000188A1 /* RocketBasic.swift */,
+				1C5D94C219FE9910000188A1 /* Rocket2000.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		1CE9116419F3C6C4005FB913 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				1C6984461A010A1B0087D895 /* Level industry */,
+				1C5F5F3619F7EDE900271E6B /* Level moon */,
+				1CE9116519F3C6DD005FB913 /* Level.swift */,
+				1C46FA1A19F4F01900EEF8DE /* LevelSection.swift */,
+				1C4CC84B1A024903000B8838 /* LevelItem.swift */,
+			);
+			name = Level;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,10 +413,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C15A1BC19FF90D00078D01E /* RocketScene.sks in Resources */,
+				1C5F5F2C19F7D09300271E6B /* Fire.sks in Resources */,
+				1C3D756C19FA4C1C00E8EC83 /* FuelLevel.xcassets in Resources */,
+				1C2E9ADD19FA38BB00B101E9 /* Explosion.sks in Resources */,
+				1C85F44B19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf in Resources */,
 				1C3CCE8219F1CB9F00DA1070 /* LaunchScreen.xib in Resources */,
+				1C2E9ADB19FA32DA00B101E9 /* MetoriteParticle.sks in Resources */,
 				1C3CCE7F19F1CB9F00DA1070 /* Images.xcassets in Resources */,
+				1C2E9AD419F94E1C00B101E9 /* spark.png in Resources */,
+				1C5F5F3319F7E46A00271E6B /* Stars.sks in Resources */,
+				1C5D94C619FEC87E000188A1 /* MenuScene.sks in Resources */,
+				1C5F5F2D19F7D09300271E6B /* spark.png in Resources */,
+				1C3D757219FA4F3600E8EC83 /* UI.xcassets in Resources */,
 				1C3CCE7619F1CB9F00DA1070 /* GameScene.sks in Resources */,
+				1C2E9AD319F94E1C00B101E9 /* FuelLevelParticles.sks in Resources */,
+				1CA7B10A19FE8F4500009E4E /* Rockets.xcassets in Resources */,
+				1C85F44D19FA71B800B597E2 /* Objects.xcassets in Resources */,
 				1C3CCE7D19F1CB9F00DA1070 /* Main.storyboard in Resources */,
+				1C48ACAD1A07FF84003C72B9 /* LevelSelect.sks in Resources */,
+				1C69844A1A01103B0087D895 /* LevelIndustryMedia.xcassets in Resources */,
+				1C5F5F3519F7E73600271E6B /* star.png in Resources */,
+				1C5F5F3119F7DB1C00271E6B /* Smoke.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,9 +452,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6984481A010A4E0087D895 /* IndustryLevel.swift in Sources */,
+				1CE9116319F2BAA6005FB913 /* BaseRocket.swift in Sources */,
 				1C3CCE7819F1CB9F00DA1070 /* GameScene.swift in Sources */,
+				1C9930E419FE723200B928F5 /* RocketExplorer.swift in Sources */,
+				1C5D94CA19FECCEE000188A1 /* BaseScene.swift in Sources */,
+				1C85F45219FA76F700B597E2 /* Objects.swift in Sources */,
+				1C3D757019FA4D5400E8EC83 /* UI.swift in Sources */,
+				1C4CC84C1A024903000B8838 /* LevelItem.swift in Sources */,
+				1C4CC8501A03925B000B8838 /* SawHorizontalSides.swift in Sources */,
+				1C15A1BA19FF8F7F0078D01E /* RocketScene.swift in Sources */,
+				1C4CC8521A03BA63000B8838 /* SawHorizontalCenter.swift in Sources */,
+				1C46FA1B19F4F01900EEF8DE /* LevelSection.swift in Sources */,
+				1C4CC84E1A02E75B000B8838 /* Ufo.swift in Sources */,
+				1C85F45019FA73C500B597E2 /* BubbleItem.swift in Sources */,
 				1C3CCE7A19F1CB9F00DA1070 /* GameViewController.swift in Sources */,
+				1CE9116619F3C6DD005FB913 /* Level.swift in Sources */,
+				1C5D94C319FE9910000188A1 /* Rocket2000.swift in Sources */,
 				1C3CCE7419F1CB9F00DA1070 /* AppDelegate.swift in Sources */,
+				1C2E9AD019F944BF00B101E9 /* FuelLevel.swift in Sources */,
+				1C48ACAB1A07783A003C72B9 /* Level01.swift in Sources */,
+				1C5D94C819FEC8D9000188A1 /* MenuScene.swift in Sources */,
+				1C6984431A0036940087D895 /* Saw.swift in Sources */,
+				1CBB47AE1A076D3F00BD16E0 /* IndustryLevelSection.swift in Sources */,
+				1C5D94C119FE9886000188A1 /* RocketBasic.swift in Sources */,
+				1C48ACAF1A07FF93003C72B9 /* LevelSelect.swift in Sources */,
+				1C6984451A00F3C30087D895 /* Crane.swift in Sources */,
+				1C5F5F3819F7EE0600271E6B /* LevelMoon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Rocket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +613,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Rocket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -414,6 +672,7 @@
 				1C3CCE9319F1CB9F00DA1070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C3CCE9419F1CB9F00DA1070 /* Build configuration list for PBXNativeTarget "RocketTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +681,7 @@
 				1C3CCE9619F1CB9F00DA1070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

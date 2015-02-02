@@ -8,167 +8,345 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+struct Physics {
+	static let playerBitmask:UInt32	= 0x1 << 0;
+	static let objectBitmask:UInt32	= 0x1 << 1;
+	static let sensorBitmask:UInt32 = 0x1 << 2;
+}
+
+class GameScene: BaseScene {
 	
-	lazy var hasRocket = false;
-	let rocketSprite	= SKSpriteNode(imageNamed:"Rocket")
-	let fireSprite		= SKSpriteNode(imageNamed: "Rocket-Fire")
-	let groundSprite	= SKSpriteNode(imageNamed: "Ground")
-	let backgroundSprite	= SKSpriteNode(imageNamed: "Background")
-	let cloudsSprite	= SKSpriteNode(imageNamed: "Clouds")
-	let padding:CGFloat = 10.0;
+	lazy var player:BaseRocket	= BaseRocket();
+	lazy var lvl:Level			= IndustryLevel();
+	lazy var currentX:CGFloat	= 0.0;
+	lazy var startX:CGFloat		= 0.0;
+	lazy var running:Bool		= false;
+
+	var score:Int = 0;
+	var fuelCheck:NSTimer = NSTimer();
+	
+	let UILayer:UI = UI();
 	
     override func didMoveToView(view: SKView)
 	{
+		switch(GameData.Rocket)
+		{
+		case Objects.ROCKET_BASIC:
+			player = RocketBasic();
+		case Objects.ROCKET_2000:
+			player = Rocket2000();
+		case Objects.ROCKET_EXPLORER:
+			player = RocketExplorer();
+		default:
+			player = BaseRocket();
+		}
 		
-		backgroundSprite.setScale(1.25);
-		backgroundSprite.position.x = self.size.width/2;
-		backgroundSprite.position.y = self.size.height*0.5;
+		self.physicsWorld.contactDelegate = self;
 		
-		cloudsSprite.setScale(1.25);
-		cloudsSprite.position.x = self.size.width/2;
-		cloudsSprite.position.y = self.size.height*0.5;
+		let screenSize: CGRect = UIScreen.mainScreen().bounds
 		
-		groundSprite.setScale(0.75);
-		groundSprite.position.x = self.size.width/2;
-		groundSprite.position.y = groundSprite.size.height * 0.5;
+		self.size.width = screenSize.width;
+		self.size.height = screenSize.height;
+		self.backgroundColor = SKColor.blackColor();
 		
-
-		addChild(backgroundSprite);
-
-		addChild(groundSprite);
+		UILayer.setSize(self.size);
+		buildLevel();
 		
+		self.createButtonFromSprite(UILayer.getPausButton(), action: "pausButtonClicked");
+	}
+	
+	func pausButtonClicked()
+	{
+		fuelCheck.invalidate();
+		self.running = false;
+		self.lvl.stop();
+		self.player.stop();
 		
-		createRocket(CGPoint(x: self.size.width/2, y: groundSprite.size.height - 10.0));
-		addChild(cloudsSprite);
-		startupAnimation();
-
-    }
+		let overlay = SKSpriteNode();
+		overlay.color = SKColor.blackColor();
+		overlay.alpha = 0.8;
+		overlay.zPosition = 2000;
+		self.addChild(overlay);
+		
+		UILayer.hide();
+	}
+	
+	func destroyLevel(closure:()->())
+	{
+		let fadeOut = SKAction.fadeAlphaTo(0.0, duration: 1.0);
+		self.runAction(fadeOut){
+			self.removeAllChildren();
+			closure();
+		}
+	}
+	
+	func buildLevel()
+	{
+		self.alpha = 0.0;
+		let fadeIn = SKAction.fadeAlphaTo(1.0, duration: 1.0);
+		
+		self.player.build();
+		
+		self.lvl.setup(CGSize(width: self.size.width, height: self.size.height), scale: self.player.worldScale);
+		
+		self.addChild(self.lvl.getBackground());
+		
+		self.addChild(self.player.getSprite());
+		
+		self.addChild(self.lvl.getForeground());
+		
+		self.addChild(self.lvl.getMiddle());
+		
+		self.addChild(UILayer.getSprite());
+		
+		self.runAction(fadeIn)
+		{
+			self.startupAnimation();
+			
+			self.fuelCheck = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "checkPlayerFuel", userInfo: nil, repeats: true);
+		}
+	}
+	
+	func blur()
+	{
+		let image:SKSpriteNode = SKSpriteNode(texture: SKTexture(image: self.getBlurredScreen()));
+		image.zPosition = 2000;
+		image.position = CGPoint.zeroPoint;
+		image.anchorPoint = CGPoint.zeroPoint;
+		
+		self.addChild(image);
+	}
+	
+	func checkPlayerFuel()
+	{
+		UILayer.setFuelLevel( self.player.fuel/100.0 );
+		
+		if(player.emptyFuel())
+		{
+			UILayer.warn(UIWarnings.WARNING_CLEAR);
+			self.fuelCheck.invalidate();
+			
+			SKNode.delay(0.2){
+				self.gameOver();
+			}
+		}
+		else if(player.lowFuel())
+		{
+			UILayer.warn(UIWarnings.WARNING_LOW_FUEL);
+		}
+	}
 	
 	func startupAnimation()
 	{
-		let clouds = SKAction.moveToY(self.groundSprite.position.y - 100, duration: 1.0);
+		self.player.shake(1.5);
 		
-		shake(1.5);
-		delay(2.0){
-			self.toggleEngine(true);
-		}
-		delay(2.5)
+		SKNode.delay(0.5)
 		{
-			self.updateRocket(CGPoint(x: self.rocketSprite.position.x, y: self.rocketSprite.position.y + 100), duration: 1.0)
+			let pos:CGPoint = CGPoint(x: self.lvl.groundSprite.position.x + self.lvl.groundSprite.size.width*0.5, y: self.lvl.groundSprite.position.y + 50);
 			
-			let groundSink = SKAction.moveToY(self.groundSprite.position.y - 200, duration: 1.0);
-			self.groundSprite.runAction(groundSink);
-			self.cloudsSprite.runAction(clouds);
-		}
-	}
-	
-	func shake(duration:Float) {
-		let amplitudeX:CGFloat = 4;
-		let amplitudeY:CGFloat = 3;
-		let numberOfShakes = duration / 0.04;
-		var actionsArray:[SKAction] = [];
-		for index in 1...Int(numberOfShakes) {
-			// build a new random shake and add it to the list
-			let moveX = CGFloat(arc4random_uniform(UInt32(amplitudeX))) - amplitudeX / 2;
-			let moveY = CGFloat(arc4random_uniform(UInt32(amplitudeY))) - amplitudeY / 2;
-			let shakeAction = SKAction.moveByX(moveX, y: moveY, duration: 0.02);
-			shakeAction.timingMode = SKActionTimingMode.EaseOut;
-			actionsArray.append(shakeAction);
-			actionsArray.append(shakeAction.reversedAction());
+			let smoke = self.player.emitSmoke(position: pos);
+			self.lvl.addToGround(smoke);
 		}
 		
-		let actionSeq = SKAction.sequence(actionsArray);
-		rocketSprite.runAction(actionSeq);
-		fireSprite.runAction(actionSeq);
+		SKNode.delay(1.0)
+		{
+			self.player.toggleEngine(true);
+		}
+		SKNode.delay(2.5)
+		{
+			self.player.moveY(self.player.sprite.position.y + 100, duration: 1.0);
+			self.lvl.start();
+			self.running = true;
+		}
 	}
 	
-	func rotateLeft()
+	func gameOver()
 	{
-		let leftAnimation = SKAction.rotateToAngle(0.02, duration: 0.2);
-		self.rocketSprite.runAction(leftAnimation);
+		if(running)
+		{
+			self.running = false;
+			println("Game over");
+			player.toggleEngine(false);
+			SKNode.delay(0.1)
+			{
+				self.lvl.stop();
+			}
+			SKNode.delay(2.0)
+			{
+				self.goToMenu();
+			}
+		}
 	}
 	
-	func rotateRight()
+	func didBeginContact(contact: SKPhysicsContact) {
+		
+		let bodyA = (contact.bodyA.node as SKSpriteNode);
+		let bodyB = (contact.bodyB.node as SKSpriteNode);
+		
+		if(bodyA.name == "player")
+		{
+			if(bodyB.name == Objects.STAR)
+			{
+				bodyB.name = Objects.STAR_TAKEN;
+
+				self.lvl.pickUp(bodyB);
+				self.player.pickUp();
+				self.pickUp();
+			}
+			else if(bodyB.name == Objects.FUEL)
+			{
+				self.lvl.pickUp(bodyB);
+				self.player.pickUp();
+				self.player.refuel(50.0);
+				UILayer.warn(UIWarnings.NOTICE_REFUEL);
+			}
+			else if(bodyB.name == Objects.RUBY)
+			{
+				bodyB.name = Objects.RUBY_TAKEN;
+				
+				self.lvl.pickUp(bodyB);
+				self.player.pickUp();
+				self.pickUp(score: 1000);
+			}
+			else if(bodyB.name == "metorite")
+			{
+				self.player.explode();
+				gameOver();
+			}
+			else if(bodyB.name == "obstacle")
+			{
+				self.player.explode();
+				gameOver();
+			}
+			else if(bodyB.name == "LevelItem")
+			{
+				//let levelItem = (contact.bodyB.node as LevelItem);
+
+				//levelItem.sensorBeginContact()
+			}
+			else
+			{
+				println("Collided with \(bodyB.name)");
+			}
+		}
+		
+		println("Body A name: \(bodyA.name)")
+		println("Body B name: \(bodyB.name)")
+	}
+	
+	func pickUp(score:Int = 10)
 	{
-		let rightAnimation = SKAction.rotateToAngle(-0.02, duration: 0.2);
-		self.rocketSprite.runAction(rightAnimation);
+		self.score += score;
+		
+		UILayer.addScore(score, startingPosition: self.player.getSprite().position)
+		{
+			self.UILayer.setScore(self.score);
+		}
 	}
-	
+
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
-        for touch: AnyObject in touches
-		{
-			let location = touch.locationInNode(self)
-			toggleEngine(true);
-			updateRocket(CGPoint(x: location.x, y: rocketSprite.position.y))
-        }
+		super.touchesBegan(touches, withEvent: event);
+		self.player.resetRotation();
     }
 	
-	func delay(delay:Double, closure:()->()) {
-		dispatch_after(
-			dispatch_time(
-				DISPATCH_TIME_NOW,
-				Int64(delay * Double(NSEC_PER_SEC))
-			),
-			dispatch_get_main_queue(), closure)
+	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+		super.touchesEnded(touches, withEvent: event);
+		self.player.resetRotation();
 	}
 	
-	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-		toggleEngine(false);
+	override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+		self.player.resetRotation();
 	}
 	
 	override func touchesMoved(touches: NSSet, withEvent event: UIEvent)
 	{
-		for touch: AnyObject in touches
+		if(player.canMove)
 		{
-			let location = touch.locationInNode(self)
-			updateRocket(CGPoint(x: location.x, y: rocketSprite.position.y))
+			var timer:NSTimer = NSTimer();
+			
+			for touch: AnyObject in touches
+			{
+				let location = touch.locationInNode(self);
+				let previous = touch.previousLocationInNode(self);
+				
+				let translation = CGPoint(x: location.x - previous.x, y: location.y - previous.y);
+				let old			= self.player.sprite.position;
+				
+				var x = old.x + translation.x;
+				let offset = self.player.sprite.size.width*0.25;
+				
+				// Limit with walls
+				if(x < offset) { x = offset; }
+				if(x > self.size.width - offset) { x = self.size.width - offset; }
+				
+				if(abs(translation.x) > 5.0)
+				{
+					timer.invalidate();
+					timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "slideStoped", userInfo: nil, repeats: false);
+					
+					if(location.x > previous.x)
+					{
+						self.player.rotateLeft();
+					}
+					else
+					{
+						self.player.rotateRight();
+					}
+				}
+				
+				self.player.move(CGPoint(x: x, y: old.y));
+			}
 		}
 	}
 	
-	func createRocket(location: CGPoint)
+	func slideStoped()
 	{
-		hasRocket = true;
-		rocketSprite.xScale	= 0.5
-		rocketSprite.yScale	= 0.5
-		rocketSprite.position = location
-		
-		fireSprite.xScale	= 0.5
-		fireSprite.yScale	= 0.5
-		fireSprite.position = CGPoint(x: location.x, y: location.y - (fireSprite.size.height - padding));
-		
-		self.addChild(fireSprite);
-		self.addChild(rocketSprite)
-		
-		fireSprite.alpha = 0.0;
+		self.player.resetRotation();
 	}
 	
-	func updateRocket(location:CGPoint, duration:Double = 0.1)
+	func getBlurredScreen() -> UIImage
 	{
+		let view = self.view as SKView!;
 		
-		let anim = SKAction.moveTo(location, duration: duration);
-		let fireAnim = SKAction.moveTo(
-			CGPoint(x: location.x, y: location.y - (fireSprite.size.height - padding)),
-			duration: duration
-		)
+		UIGraphicsBeginImageContextWithOptions(self.size, false, 1.0);
+		view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true);
 		
-		rocketSprite.runAction(anim);
-		fireSprite.runAction(fireAnim);
+		let ss:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+		UIGraphicsEndImageContext();
+		
+		let gaussianBlurFilter = CIFilter(name: "CIGaussianBlur");
+		gaussianBlurFilter.setDefaults();
+		gaussianBlurFilter.setValue(CIImage(image: ss), forKey: kCIInputImageKey);
+		gaussianBlurFilter.setValue(5, forKey: kCIInputRadiusKey);
+
+		let outputImage:CIImage = gaussianBlurFilter.outputImage;
+		let context:CIContext = CIContext(options: nil);
+		let rect = CGRect(origin: CGPoint.zeroPoint, size: self.size);
+		
+		let cgimg = context.createCGImage(outputImage, fromRect: rect);
+		let image = UIImage(CGImage: cgimg);
+		
+		return image!;
 	}
 	
-	func toggleEngine(state:Bool)
+	private func goToMenu()
 	{
-		if(state)
-		{
-			let action = SKAction.fadeInWithDuration(0.5);
-			fireSprite.runAction(action);
-		}
-		else
-		{
-			let action = SKAction.fadeOutWithDuration(0.1);
-			fireSprite.runAction(action);
+		if let scene = MenuScene.unarchiveFromFile("MenuScene") as? SKScene {
+			
+			// Configure the view.
+			let skView = self.view as SKView!
+			skView.showsFPS = true
+			skView.showsNodeCount = true
+			skView.backgroundColor = SKColor.blackColor();
+			
+			/* Sprite Kit applies additional optimizations to improve rendering performance */
+			skView.ignoresSiblingOrder = true
+			
+			/* Set the scale mode to scale to fit the window */
+			scene.scaleMode = .AspectFill
+			
+			skView.presentScene(scene)
 		}
 	}
 	
