@@ -25,6 +25,10 @@ class UI {
 	private let sprite			= SKSpriteNode();
 	private var size:CGSize		= CGSize.zeroSize;
 	
+	// Player controllers
+	private let playerControllerLeft = SKSpriteNode();
+	private let playerControllerRight = SKSpriteNode();
+	
 	// Fuel
 	private let fuelLevel		= FuelLevel();
 
@@ -90,6 +94,7 @@ class UI {
 		sprite.addChild(TopBar())
 		sprite.addChild(scoreIcon);
 		sprite.addChild(ScoreLabel());
+		sprite.addChild(PlayerController());
 		setScore(0);
 	}
 	
@@ -196,6 +201,39 @@ class UI {
 		scoreLabelHolder.addChild(scoreLabel);
 		
 		return scoreLabelHolder;
+	}
+	
+	private func PlayerController() -> SKSpriteNode
+	{
+		let playerController = SKSpriteNode();
+		
+		let size = CGSize(width: self.sprite.size.width*0.5, height: self.sprite.size.height*0.5);
+		
+		playerControllerLeft.name = "player-controller-left";
+		playerControllerRight.name = "player-controller-right";
+		
+		playerControllerLeft.size = size;
+		playerControllerRight.size = size;
+		
+		//playerControllerLeft.color = UIColor.yellowColor();
+		//playerControllerRight.color = UIColor.blueColor();
+		
+		playerControllerLeft.anchorPoint	= CGPoint.zeroPoint;
+		playerControllerLeft.position		= CGPoint.zeroPoint;
+		
+		playerControllerRight.anchorPoint	= CGPoint.zeroPoint;
+		playerControllerRight.position		= CGPoint(x: size.width, y: 0);
+		
+		playerController.size = CGSize(width: self.sprite.size.width, height: self.sprite.size.height*0.5);
+		//playerController.color = UIColor.redColor();
+		
+		playerController.anchorPoint	= CGPoint.zeroPoint;
+		playerController.position		= CGPoint.zeroPoint;
+		
+		playerController.addChild(playerControllerLeft);
+		playerController.addChild(playerControllerRight);
+		
+		return playerController;
 	}
 	
 }

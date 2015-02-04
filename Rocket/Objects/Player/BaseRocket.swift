@@ -199,7 +199,8 @@ class BaseRocket : NSObject {
 	
 	func move(pos:CGPoint)
 	{
-		self.sprite.position = pos;
+		let anim = SKAction.moveTo(pos, duration: 0.5);
+		self.sprite.runAction(anim);
 	}
 	
 	func setPosition(pos:CGPoint)

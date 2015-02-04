@@ -48,7 +48,6 @@
 		1C6984451A00F3C30087D895 /* Crane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6984441A00F3C30087D895 /* Crane.swift */; };
 		1C6984481A010A4E0087D895 /* IndustryLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6984471A010A4E0087D895 /* IndustryLevel.swift */; };
 		1C69844A1A01103B0087D895 /* LevelIndustryMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6984491A01103B0087D895 /* LevelIndustryMedia.xcassets */; };
-		1C85F44B19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C85F44A19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf */; };
 		1C85F44D19FA71B800B597E2 /* Objects.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C85F44C19FA71B800B597E2 /* Objects.xcassets */; };
 		1C85F45019FA73C500B597E2 /* BubbleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85F44F19FA73C500B597E2 /* BubbleItem.swift */; };
 		1C85F45219FA76F700B597E2 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85F45119FA76F700B597E2 /* Objects.swift */; };
@@ -115,7 +114,6 @@
 		1C6984441A00F3C30087D895 /* Crane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Crane.swift; path = Objects/Level/Crane.swift; sourceTree = "<group>"; };
 		1C6984471A010A4E0087D895 /* IndustryLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndustryLevel.swift; path = "Objects/Level/Level industry/IndustryLevel.swift"; sourceTree = "<group>"; };
 		1C6984491A01103B0087D895 /* LevelIndustryMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = LevelIndustryMedia.xcassets; path = "Objects/Level/Level industry/LevelIndustryMedia.xcassets"; sourceTree = "<group>"; };
-		1C85F44A19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ComicNeue-Angular-Bold.ttf"; path = "Assets/material/comic-neue-1.1/ComicNeue-Angular-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		1C85F44C19FA71B800B597E2 /* Objects.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Objects.xcassets; path = Objects/Objects.xcassets; sourceTree = "<group>"; };
 		1C85F44F19FA73C500B597E2 /* BubbleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleItem.swift; path = Objects/BubbleItem/BubbleItem.swift; sourceTree = "<group>"; };
 		1C85F45119FA76F700B597E2 /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Objects.swift; path = Objects/Objects.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				1C5D94C419FEC81D000188A1 /* Scenes */,
-				1C85F44A19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf */,
 				1CE9115A19F29A48005FB913 /* Objects */,
 				1C3CCE7319F1CB9F00DA1070 /* AppDelegate.swift */,
 				1C3CCE7519F1CB9F00DA1070 /* GameScene.sks */,
@@ -381,10 +378,11 @@
 				TargetAttributes = {
 					1C3CCE6D19F1CB9F00DA1070 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 686HSZE979;
+						DevelopmentTeam = P72AYE3K25;
 					};
 					1C3CCE8619F1CB9F00DA1070 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = P72AYE3K25;
 						TestTargetID = 1C3CCE6D19F1CB9F00DA1070;
 					};
 				};
@@ -417,7 +415,6 @@
 				1C5F5F2C19F7D09300271E6B /* Fire.sks in Resources */,
 				1C3D756C19FA4C1C00E8EC83 /* FuelLevel.xcassets in Resources */,
 				1C2E9ADD19FA38BB00B101E9 /* Explosion.sks in Resources */,
-				1C85F44B19FA5BD400B597E2 /* ComicNeue-Angular-Bold.ttf in Resources */,
 				1C3CCE8219F1CB9F00DA1070 /* LaunchScreen.xib in Resources */,
 				1C2E9ADB19FA32DA00B101E9 /* MetoriteParticle.sks in Resources */,
 				1C3CCE7F19F1CB9F00DA1070 /* Images.xcassets in Resources */,

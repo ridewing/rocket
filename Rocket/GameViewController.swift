@@ -36,6 +36,8 @@ extension SKNode {
 	}
 }
 
+// Game settings
+
 struct Levels {
 	static var EARTH = "earth";
 	static var INDUSTRY = "industry";
@@ -52,7 +54,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-        if let scene = MenuScene.unarchiveFromFile("MenuScene") as? SKScene {
+        if let scene = GameScene.unarchiveFromFile("GameScene") as? SKScene {
 
 			// Configure the view.
             let skView = self.view as SKView
