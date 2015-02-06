@@ -31,14 +31,14 @@ class GameScene: BaseScene {
 	{		
 		switch(GameData.Rocket)
 		{
-		case Objects.ROCKET_BASIC:
-			player = RocketBasic();
-		case Objects.ROCKET_2000:
-			player = Rocket2000();
-		case Objects.ROCKET_EXPLORER:
-			player = RocketExplorer();
-		default:
-			player = BaseRocket();
+			case Objects.ROCKET_BASIC:
+				player = RocketBasic();
+			case Objects.ROCKET_2000:
+				player = Rocket2000();
+			case Objects.ROCKET_EXPLORER:
+				player = RocketExplorer();
+			default:
+				player = BaseRocket();
 		}
 		
 		self.physicsWorld.contactDelegate = self;
@@ -243,6 +243,22 @@ class GameScene: BaseScene {
 			self.UILayer.setScore(self.score);
 		}
 	}
+	
+	override func PlayerControllerActivated(direction: NSString) {
+		if(player.canMove)
+		{
+			let old	= self.player.sprite.position;
+			var x = old.x;
+			
+			if(direction == "right"){
+				x += 10;
+			} else {
+				x -= 10;
+			}
+			
+			self.player.move(CGPoint(x: x, y: old.y));
+		}
+	}
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
@@ -261,7 +277,7 @@ class GameScene: BaseScene {
 	
 	override func touchesMoved(touches: NSSet, withEvent event: UIEvent)
 	{
-		if(player.canMove)
+		/*if(player.canMove)
 		{
 			var timer:NSTimer = NSTimer();
 			
@@ -297,7 +313,7 @@ class GameScene: BaseScene {
 				
 				self.player.move(CGPoint(x: x, y: old.y));
 			}
-		}
+		}*/
 	}
 	
 	func slideStoped()
