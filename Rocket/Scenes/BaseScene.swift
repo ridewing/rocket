@@ -115,16 +115,6 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
 						self.currentButtonTouched = button;
 						self.currentButtonTouched.runAction(SKAction.scaleTo(1.02, duration: 0.1));
 					}
-					else if(node.name == "player-controller-right" || node.name == "player-controller-left"){
-						println("Player controller");
-						println(node.name);
-						if(node.name == "player-controller-right") {
-							PlayerControllerActivated("right");
-						} else {
-							PlayerControllerActivated("left");
-						}
-						
-					}
 					else if(node.name != nil)
 					{
 						self.currentButtonTouched = (node as SKSpriteNode);
@@ -136,10 +126,6 @@ class BaseScene: SKScene, SKPhysicsContactDelegate {
 				self.currentButtonTouched = SKSpriteNode();
 			}
 		}
-	}
-	
-	func PlayerControllerActivated(direction: NSString) {
-	
 	}
 	
 	override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {

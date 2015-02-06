@@ -122,11 +122,13 @@ class LevelSection {
 	
 	func createObjectRow(y:CGFloat)
 	{
+		let objectWallOffset:CGFloat = 45.0;
+		
 		lastObject = getRandomObject();
 		
 		let firstObject = BubbleItem(
 			imageNamed: self.objects[lastObject],
-			x : 15.0,
+			x : objectWallOffset,
 			y : y
 		);
 		
@@ -143,7 +145,7 @@ class LevelSection {
 		
 		let secondObject = BubbleItem(
 			imageNamed: self.objects[lastObject],
-			x: self.size.width - 15.0,
+			x: self.size.width - objectWallOffset,
 			y: y
 		);
 		

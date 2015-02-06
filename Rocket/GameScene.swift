@@ -28,7 +28,8 @@ class GameScene: BaseScene {
 	let UILayer:UI = UI();
 	
     override func didMoveToView(view: SKView)
-	{		
+	{
+		// Determine what rocket to use
 		switch(GameData.Rocket)
 		{
 			case Objects.ROCKET_BASIC:
@@ -243,22 +244,6 @@ class GameScene: BaseScene {
 			self.UILayer.setScore(self.score);
 		}
 	}
-	
-	override func PlayerControllerActivated(direction: NSString) {
-		if(player.canMove)
-		{
-			let old	= self.player.sprite.position;
-			var x = old.x;
-			
-			if(direction == "right"){
-				x += 10;
-			} else {
-				x -= 10;
-			}
-			
-			self.player.move(CGPoint(x: x, y: old.y));
-		}
-	}
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
@@ -277,7 +262,7 @@ class GameScene: BaseScene {
 	
 	override func touchesMoved(touches: NSSet, withEvent event: UIEvent)
 	{
-		/*if(player.canMove)
+		if(player.canMove)
 		{
 			var timer:NSTimer = NSTimer();
 			
@@ -313,7 +298,7 @@ class GameScene: BaseScene {
 				
 				self.player.move(CGPoint(x: x, y: old.y));
 			}
-		}*/
+		}
 	}
 	
 	func slideStoped()
