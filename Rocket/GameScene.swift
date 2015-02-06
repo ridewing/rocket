@@ -28,7 +28,7 @@ class GameScene: BaseScene {
 	let UILayer:UI = UI();
 	
     override func didMoveToView(view: SKView)
-	{
+	{		
 		switch(GameData.Rocket)
 		{
 		case Objects.ROCKET_BASIC:
